@@ -1,0 +1,18 @@
+version: 4.1.29
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: hover-text
+        text: Analyze data fast with spreadsheet AI
+        description: main heading on the webpage
+        action: click
+  - prompt: Assert that the webpage loads successfully.
+    commands:
+      - command: assert
+        expect: Analyze data fast with spreadsheet AI is visible on the webpage
+  - prompt: >-
+      Assert that the quadratic logo is visible on the page.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: quadratic logo is visible on the webpage
