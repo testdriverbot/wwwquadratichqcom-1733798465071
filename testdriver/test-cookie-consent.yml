@@ -1,0 +1,26 @@
+version: 4.1.29
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Locate the cookie consent pop-up.
+    commands:
+      - command: hover-text
+        text: Accept
+        description: accept button in the cookie consent pop-up
+        action: hover
+  - prompt: Click "Accept" on the cookie consent.
+    commands:
+      - command: hover-text
+        text: Accept
+        description: accept button in the cookie consent pop-up
+        action: click
+  - prompt: >-
+      Assert that the pop-up disappears and site interaction is unaffected.  #
+      Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: >-
+          the cookie consent pop-up is not visible and site elements are
+          interactive
