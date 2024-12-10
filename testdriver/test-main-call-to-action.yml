@@ -1,0 +1,16 @@
+version: 4.1.29
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Click the "Try Quadratic AI" button.
+    commands:
+      - command: hover-text
+        text: Try Quadratic AI
+        description: button to try the Quadratic AI feature
+        action: click
+  - prompt: >-
+      Assert that the user is directed to the correct page or action.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the user is on the "Log in to Quadratic" page
